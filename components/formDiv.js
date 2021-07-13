@@ -1,43 +1,49 @@
-import { useForm } from "react-hook-form";
+// import { useForm } from "react-hook-form";
 import { useState } from 'react';
-import axios from "axios";
+// import axios from "axios";
 import ReactPlayer from 'react-player';
 import router, { useRouter } from "next/router";
 
 import styles from '../styles/Form.module.css';
-import cover from '../assets/banner-home.jpg';
+// import cover from '../assets/banner-home.jpg';
 
 export default function Form() {
-  const { register, handleSubmit, reset } =  useForm();
-  const [ loading, setLoading ] = useState(false);
+  // const { register, handleSubmit, reset } =  useForm();
+  // const [ loading, setLoading ] = useState(false);
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [message, setMessage] = useState('')
+  const [submitted, setSubmitted] = useState(false)
 
-  async function onSubmitForm(values){
-    let config = {
-      method: 'post',
-      url: 'https://cdd-call.herokuapp.com/api/contact',
-      // url: `${process.env.NEXT_PUBLIC_API_URL}/api/contact`,
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      data: values,
-    };
-    
-    try {
-      const response = await axios(config);
-      console.log(response)
-      if(response.status == 200) {
-        reset();
-        router.push('/obrigado')
-      }
-    } catch (err) {
-      console.error(err);
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    console.log('Sending')
+
+    let data = {
+        name,
+        email,
+        message
     }
 
+    fetch('/api/contact', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    }).then((res) => {
+        console.log('Response received')
+        if (res.status === 200) {
+            console.log('Response succeeded!')
+            setSubmitted(true) 
+            setName('')
+            setEmail('')
+            setMessage('')
+        }
+    })
   }
-  // function handleSubmit(){
-  //   setLoading(true);
-  // }
-  
+    
   return (
     <div className={styles.form}>
       <div className={styles.formCont}>
@@ -52,7 +58,7 @@ export default function Form() {
             light='https://i.ibb.co/Vx6LnVp/thumbnail.png'
           />
         </div>
-        <form onSubmit={handleSubmit(onSubmitForm)} className={styles.formDiv} id='form'>
+        {/* <form onSubmit={sendEmail} className={styles.formDiv} id='form'>
           <h1>Informe os dados para consultar a viabilidade na sua região</h1>
           <div className={styles.formContainer}>
             <label htmlFor="name" className={styles.hiddenLabel}>
@@ -61,7 +67,7 @@ export default function Form() {
             <input
               id="name"
               type="text"
-              {...register("name")}
+              name="name"
               placeholder="Nome (obrigatório)"
               required
             />
@@ -71,9 +77,9 @@ export default function Form() {
             <input
               id="phone"
               type="text"
+              name="phone"
               placeholder="Telefone (obrigatório)"
               required
-              {...register("phone")}
             />
             <label htmlFor="email" className={styles.hiddenLabel}>
               E-mail
@@ -81,7 +87,7 @@ export default function Form() {
             <input
               id="email"
               type="text"
-              {...register("email")}
+              name="email"
               placeholder="E-mail (obrigatório)"
               required
             />
@@ -91,7 +97,7 @@ export default function Form() {
             <input
               id="address"
               type="text"
-              {...register("address")}
+              name="address"
               placeholder="Endereço (obrigatório)"
             />
             <label htmlFor="addressNumber" className={styles.hiddenLabel}>
@@ -100,7 +106,7 @@ export default function Form() {
             <input
               id="addressNumber"
               type="text"
-              {...register("addressNumber")}
+              name="addressNumber"
               placeholder="Número (obrigatório)"
               required
             />
@@ -110,7 +116,7 @@ export default function Form() {
             <input
               id="city"
               type="text"
-              {...register("city")}
+              name="city"
               placeholder="Cidade (obrigatório)"
               required
             />
@@ -122,7 +128,26 @@ export default function Form() {
             <div className="spinner"></div>
           </div>
           ) : ''}              
-        </form>        
+        </form>         */}
+        < form className={styles.main} >
+
+          < formGroup className={styles.inputGroup} >
+            < label htmlFor='name'>Name</label>
+            < input type='text' onChange={(e)=>{setName(e.target.value)}} name='name' className={styles.inputField} />
+          </formGroup>
+
+          < formGroup className={styles.inputGroup} >
+            < label htmlFor='email'>Email</label>
+            < input type='email' onChange={(e)=>{setEmail(e.target.value)}} name='email' className={styles.inputField} />
+          </formGroup>
+
+          < formGroup className={styles.inputGroup} >
+            < label htmlFor='message'>Message</label>
+            < input type='text' onChange={(e)=>{setMessage(e.target.value)}} name='message' className={styles.inputField} />
+          </formGroup>
+
+          < input type='submit' onClick={(e)=>{handleSubmit(e)}}/>
+          </form >
       </div>
     </div>    
   )
