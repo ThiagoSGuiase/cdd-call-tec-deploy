@@ -10,38 +10,18 @@ import styles from '../styles/Form.module.css';
 export default function Form() {
   // const { register, handleSubmit, reset } =  useForm();
   // const [ loading, setLoading ] = useState(false);
-  const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
-  const [message, setMessage] = useState('')
-  const [submitted, setSubmitted] = useState(false)
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    console.log('Sending')
-
-    let data = {
-        name,
-        email,
-        message
-    }
-
-    fetch('/api/contact', {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json, text/plain, */*',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(data)
-    }).then((res) => {
-        console.log('Response received')
-        if (res.status === 200) {
-            console.log('Response succeeded!')
-            setSubmitted(true) 
-            setName('')
-            setEmail('')
-            setMessage('')
-        }
+  async function handleOnSubmit(e){
+    e.preventDefault();
+    const formData = {}
+    Array.from(e.currentTarget.elements).forEach(field => {
+      if (!field.name) return;
+      formData[field.name] = field.value;
+    });
+    fetch('/api/mail', {
+      method: 'post',
+      body: JSON.stringify(formData)
     })
+    console.log(formData);
   }
     
   return (
@@ -129,24 +109,17 @@ export default function Form() {
           </div>
           ) : ''}              
         </form>         */}
-        < form className={styles.main} >
-
-          < formGroup className={styles.inputGroup} >
+        < form className={styles.main} method="post" onSubmit={handleOnSubmit}>
             < label htmlFor='name'>Name</label>
-            < input type='text' onChange={(e)=>{setName(e.target.value)}} name='name' className={styles.inputField} />
-          </formGroup>
+            < input type='text' name='name' className={styles.inputField} />
 
-          < formGroup className={styles.inputGroup} >
             < label htmlFor='email'>Email</label>
-            < input type='email' onChange={(e)=>{setEmail(e.target.value)}} name='email' className={styles.inputField} />
-          </formGroup>
+            < input type='email' name='email' className={styles.inputField} />
 
-          < formGroup className={styles.inputGroup} >
             < label htmlFor='message'>Message</label>
-            < input type='text' onChange={(e)=>{setMessage(e.target.value)}} name='message' className={styles.inputField} />
-          </formGroup>
+            < input type='text' name='message' className={styles.inputField} />
 
-          < input type='submit' onClick={(e)=>{handleSubmit(e)}}/>
+          < input type='submit'/>
           </form >
       </div>
     </div>    
