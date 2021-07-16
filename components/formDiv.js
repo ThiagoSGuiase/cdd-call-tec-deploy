@@ -110,7 +110,7 @@ export default function Form() {
           ) : ''}              
         </form>         */}
         < form className={styles.main} method="post" onSubmit={handleOnSubmit}>
-            < label htmlFor='name'>Name</label>
+            < label htmlFor='name'>Name:</label>
             < input type='text' name='name' className={styles.inputField} />
 
             < label htmlFor='email'>Email</label>
