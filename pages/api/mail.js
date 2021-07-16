@@ -12,8 +12,8 @@ export default (req, res) => {
   `;
   
   const data = {
-    to: 'cddcred.business@gmail.com',
-    from: 'cddcred.business@gmail.com',
+    to: 'cdd.forms@gmail.com',
+    from: 'cdd.forms@gmail.com',
     subject: 'New web form message!',
     text: message,
     html: message.replace(/\r\n/g, '<br>')
