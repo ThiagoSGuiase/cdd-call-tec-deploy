@@ -6,15 +6,17 @@ export default async (req, res) => {
   const body = JSON.parse(req.body);
 
   const message = `
-    Name: ${body.name}\r\n
-    Email: ${body.email}\r\n
-    Message: ${body.message}\r\n
+    Nome: ${body.name}\r\n
+    Telefone: ${body.phone}\r\n
+    E-mail: ${body.email}\r\n
+    Endereço: ${body.address}, ${body.addressNumber}\r\n
+    Cidade: ${body.city}\r\n
   `;
   
   const data = {
     to: 'cdd.forms@gmail.com',
     from: 'cdd.forms@gmail.com',
-    subject: 'New web form message!',
+    subject: 'Novo formulário! 📑',
     text: message,
     html: message.replace(/\r\n/g, '<br>')
   };
