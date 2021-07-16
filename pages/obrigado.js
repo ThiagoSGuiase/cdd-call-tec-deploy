@@ -9,7 +9,8 @@ export default function Home() {
   return (
     <div className={styles.thanksPage}>
       <Head>
-        <title>CDD Call Tecnologia - Obrigado</title>
+        <title>CDD CALL | Sercomtel</title>
+        <meta name="description" content="Uma empresa Londrinense totalmente focada na busca por soluções tecnológicas que levam maior agilidade e confiabilidade para clientes e parceiros comerciais." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Menu />
