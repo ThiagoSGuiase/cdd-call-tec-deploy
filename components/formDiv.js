@@ -21,6 +21,8 @@ export default function Form() {
       method: 'post',
       body: JSON.stringify(formData)
     })
+    router.push('/obrigado')
+    
     console.log(formData);
   }
     
