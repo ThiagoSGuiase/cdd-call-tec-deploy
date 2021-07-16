@@ -20,8 +20,7 @@ export default async (req, res) => {
   };
 
  try {
-  mail.send(data);
-
+  await mail.send(data);
   res.status(200).json({ status: 'Ok' })
  } catch (error){
   res.status(500).json({ error: 'Error sending email' })
