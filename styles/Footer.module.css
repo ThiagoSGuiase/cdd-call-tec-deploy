@@ -59,13 +59,15 @@
   margin-top: 2rem;
 }
 .footerAddress,
-.footerHour {
+.footerHour,
+.footerPhone {
   display: flex;
   align-items: center;
   color: #003889;
 }
 .footerAddress svg,
-.footerHour svg {
+.footerHour svg,
+.footerPhone svg {
   font-size: 1.6rem;
   margin-right: 10px;
 }

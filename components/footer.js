@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { FaFacebook, FaInstagram, FaWhatsapp, FaMapMarkerAlt, FaClock } from 'react-icons/fa';
+import { AiFillPhone } from 'react-icons/ai';
 import CDDlogo from '../public/cdd-logo.svg';
 
 import styles from '../styles/Footer.module.css';
@@ -50,6 +51,10 @@ export const Footer = () => {
           <div className={styles.footerHour}>
             <FaClock />
             <p>Seg à Sex 09:00 às 18:00</p>
+          </div>
+          <div className={styles.footerPhone}>
+            <AiFillPhone />
+            <a href="https://web.whatsapp.com/send?phone=554333429000">(43) 3342-9000</a>
           </div>
         </div>
       </div>
