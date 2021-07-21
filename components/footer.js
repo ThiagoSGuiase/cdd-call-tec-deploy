@@ -54,7 +54,7 @@ export const Footer = () => {
           </div>
           <div className={styles.footerPhone}>
             <AiFillPhone />
-            <a href="https://web.whatsapp.com/send?phone=554333429000">(43) 3342-9000</a>
+            <a href="https://web.whatsapp.com/send?phone=554333429000" target="_blank" rel="noopener noreferrer">(43) 3342-9000</a>
           </div>
         </div>
       </div>
