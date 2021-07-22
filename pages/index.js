@@ -54,7 +54,7 @@ export default function Home() {
       <Footer />
       <div className={styles.wppPlugin}>
         <Link href="https://api.whatsapp.com/send?phone=554333429000">
-          <a target="_blank" rel="noopener noreferrer">
+          <a>
             <FaWhatsapp />
           </a>
         </Link>

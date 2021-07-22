@@ -17,7 +17,7 @@ export const Plans = () => {
           </div>
           <p className={styles.planCard__desc}>Planos Alternativos de Serviço: Mais (PAS nº 48A e nº 68). chamadas locais de fixo para fixo qualquer operadora e fixo para celular Sercomtel, serão ilimitadas e isentas de tarifas, não havendo tarifação para minutos excedentes.</p>
           <Link href={`https://api.whatsapp.com/send?phone=554333429000&text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Plano%20Mais!`} >
-            <a target="_blank" rel="noopener noreferrer">
+            <a>
               Adquira
             </a>
           </Link>
@@ -41,7 +41,7 @@ export const Plans = () => {
             <li>- Wi-Fi Dual grátis</li>
           </ul>
           <Link href={`https://api.whatsapp.com/send?phone=554333429000&text=Ol%C3%A1%2C%20tenho%20interesse%20no%20plano%20Fibra%20400%20Mega!`}>
-            <a target="_blank" rel="noopener noreferrer">
+            <a>
               Adquira
             </a>
           </Link>
@@ -65,7 +65,7 @@ export const Plans = () => {
             <li>- Wi-Fi Dual grátis</li>
           </ul>
           <Link href={`https://api.whatsapp.com/send?phone=554333429000&text=Ol%C3%A1%2C%20tenho%20interesse%20no%20plano%20Fibra%20500%20Mega!`}>
-            <a target="_blank" rel="noopener noreferrer">
+            <a>
               Adquira
             </a>
           </Link>
