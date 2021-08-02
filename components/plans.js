@@ -6,16 +6,22 @@ export const Plans = () => {
     <div className={styles.plans}>
       <div className={styles.plansContent}>
         <div className={styles.planCard}>
-          <h3>Plano Mais</h3>
+          <h3>Fibra 200 Mega</h3>
           <div className={styles.planCard__price}>
             <div className={styles.planCard__priceNumber}>
               <p>R$</p>
-              69,90
+              99,90
               <p>/mensal</p>
             </div>
-            <p>ou R$ 59,90 pela Conta Web*</p>
+            <p>* preço fixo</p>
           </div>
-          <p className={styles.planCard__desc}>Planos Alternativos de Serviço: Mais (PAS nº 48A e nº 68). chamadas locais de fixo para fixo qualquer operadora e fixo para celular Sercomtel, serão ilimitadas e isentas de tarifas, não havendo tarifação para minutos excedentes.</p>
+          <ul className={styles.planCard__list}>
+            <li>- Download: 200Mbps</li>
+            <li>- Upload: 100Mbps</li>
+            <li>- IP Randômico</li>
+            <li>- Wi-Fi Dual grátis</li>
+          </ul>
+          {/* <p className={styles.planCard__desc}>Planos Alternativos de Serviço: Mais (PAS nº 48A e nº 68). chamadas locais de fixo para fixo qualquer operadora e fixo para celular Sercomtel, serão ilimitadas e isentas de tarifas, não havendo tarifação para minutos excedentes.</p> */}
           <Link href='https://api.whatsapp.com/send?phone=554333429000' >
             <a>
               Adquira
