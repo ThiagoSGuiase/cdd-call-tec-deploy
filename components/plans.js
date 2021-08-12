@@ -24,7 +24,7 @@ export const Plans = () => {
           {/* <p className={styles.planCard__desc}>Planos Alternativos de Serviço: Mais (PAS nº 48A e nº 68). chamadas locais de fixo para fixo qualquer operadora e fixo para celular Sercomtel, serão ilimitadas e isentas de tarifas, não havendo tarifação para minutos excedentes.</p> */}
           <Link href='https://api.whatsapp.com/send?phone=554333429000' >
             <a>
-              Adquira
+              Chame Agora!
             </a>
           </Link>
           <p className={styles.planCard_note}>* Conta Web é quando a cobrança da conta é feita pelo e-mail e não por boleto físico</p>
@@ -48,7 +48,7 @@ export const Plans = () => {
           </ul>
           <Link href='https://api.whatsapp.com/send?phone=554333429000'>
             <a>
-              Adquira
+              Chame Agora!
             </a>
           </Link>
           <p className={styles.planCard_note}>Valores mediante contratação da promoção Banda Larga Sercomtel + Wi-Fi Grátis + Plano de Voz com Conta Web</p>
@@ -72,7 +72,7 @@ export const Plans = () => {
           </ul>
           <Link href='https://api.whatsapp.com/send?phone=554333429000'>
             <a>
-              Adquira
+              Chame Agora!
             </a>
           </Link>
           <p className={styles.planCard_note}>Valores mediante contratação da promoção Banda Larga Sercomtel + Wi-Fi Grátis + Plano de Voz com Conta Web</p>
