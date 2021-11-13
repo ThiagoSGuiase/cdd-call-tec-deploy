@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import ReactPlayer from 'react-player';
 import router, { useRouter } from "next/router";
 
@@ -22,6 +22,13 @@ export default function Form() {
 
     console.log(formData);
   }
+
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://d335luupugsy2.cloudfront.net/js/loader-scripts/ea810de5-9ab8-4d66-bbc0-e6dd17c28f65-loader.js";
+    script.async = true;
+    document.body.appendChild(script);
+  }, [])
     
   return (
     <div className={styles.form}>
