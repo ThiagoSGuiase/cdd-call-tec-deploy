@@ -59,7 +59,8 @@ export const Footer = () => {
         </div>
       </div>
       <div className={styles.footerBottom}>
-        © 2021 <strong>CDD Call Tecnologia</strong> - Desenvolvido por <strong><Link href="https://centro.londrinaguiase.com.br/" target="_blank" rel="noopener">Guia-se Marketing Digital</Link></strong>.
+        {/* © 2021 <strong>CDD Call Tecnologia</strong> - Desenvolvido por <strong><Link href="https://centro.londrinaguiase.com.br/" target="_blank" rel="noopener">Guia-se Marketing Digital</Link></strong>. */}
+        © 2021 <strong>CDD Call Tecnologia</strong> - MARCOS VINICIUS FRAGERI DE MELO - <strong>CNPJ:</strong> 30.036.385/0001-08.
       </div>
     </footer>
   )
