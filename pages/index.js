@@ -37,13 +37,13 @@ export default function Home() {
         <Map />
       </main>
       <Footer />
-      <div className={styles.wppPlugin}>
+      {/* <div className={styles.wppPlugin}>
         <Link href="https://api.whatsapp.com/send?phone=554333429000">
           <a>
             <FaWhatsapp />
           </a>
         </Link>
-      </div>
+      </div> */}
     </div>
   )
 }
