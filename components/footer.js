@@ -46,7 +46,7 @@ export const Footer = () => {
         <div className={styles.footerContact}>
           <div className={styles.footerAddress}>
             <FaMapMarkerAlt />
-            <p>Rua Maranhão, 65 - 7º andar - Centro - Londrina/PR - CEP 86010-410</p>
+            <p>Rua Senador Souza Naves, 626 - sala 66 - Ed. Empresarial - Centro - Londrina/PR - CEP 86010-160</p>
           </div>
           <div className={styles.footerHour}>
             <FaClock />
